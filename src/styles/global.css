@@ -49,7 +49,7 @@ h1, h2, h3, h4 { color: var(--text); line-height: 1.12; }
 .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
 
 /* Anchor targets sit below the sticky header when opened from navigation. */
-:where(.hero[id], .section[id]) { scroll-margin-top: calc(var(--header-height) + 1.25rem); }
+:where(.hero[id], .section[id]) { scroll-margin-top: var(--header-height); }
 a:focus-visible, button:focus-visible { outline: 3px solid rgba(242, 106, 61, 0.6); outline-offset: 3px; }
 
 /* Shared controls */
@@ -119,7 +119,7 @@ a:focus-visible, button:focus-visible { outline: 3px solid rgba(242, 106, 61, 0.
 .site-header.is-open .mobile-nav { display: flex; }
 
 /* Hero */
-.hero { position: relative; isolation: isolate; min-height: 0; padding: clamp(1.5rem, 3vw, 3rem) 0 clamp(3rem, 5vw, 5rem); overflow: hidden; }
+.hero { position: relative; isolation: isolate; min-height: calc(100dvh - var(--header-height)); padding: clamp(1.5rem, 3vw, 3rem) 0 clamp(3rem, 5vw, 5rem); overflow: hidden; }
 .hero::before { content: ''; position: absolute; inset: 0; z-index: -1; background-image: linear-gradient(rgba(242, 106, 61, 0.045) 1px, transparent 1px), linear-gradient(90deg, rgba(242, 106, 61, 0.045) 1px, transparent 1px); background-size: 56px 56px; mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.76), transparent 78%); -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.76), transparent 78%); pointer-events: none; }
 .hero::after { content: ''; position: absolute; inset: 0; z-index: -1; background: radial-gradient(circle at 84% 32%, rgba(242, 106, 61, 0.13), transparent 24rem), radial-gradient(circle at 12% 84%, rgba(169, 50, 32, 0.1), transparent 22rem), linear-gradient(118deg, transparent 0 48%, rgba(242, 106, 61, 0.055) 48.1%, transparent 48.35% 100%); pointer-events: none; }
 .hero-inner { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 2fr) minmax(280px, 1fr); align-items: center; gap: clamp(2.5rem, 5vw, 5rem); }
@@ -153,7 +153,7 @@ a:focus-visible, button:focus-visible { outline: 3px solid rgba(242, 106, 61, 0.
 .hero-scroll span { width: 2rem; height: 1px; background: var(--accent); }
 
 /* Sections and About */
-.section { position: relative; isolation: isolate; padding: clamp(3.75rem, 5.5vw, 5.75rem) 0; border-top: 1px solid var(--border); }
+.section { position: relative; isolation: isolate; min-height: calc(100dvh - var(--header-height)); padding: clamp(3.75rem, 5.5vw, 5.75rem) 0; border-top: 1px solid var(--border); }
 .section::before { content: ''; position: absolute; inset: 0; z-index: -1; background: radial-gradient(circle at 92% 12%, rgba(242, 106, 61, 0.055), transparent 24rem); pointer-events: none; }
 .section:nth-of-type(even)::before { background: radial-gradient(circle at 8% 18%, rgba(169, 50, 32, 0.06), transparent 25rem); }
 .section-heading { position: relative; display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 2rem; padding: 0 0 1rem; border-top: 0; border-bottom: 1px solid var(--border); }
@@ -260,7 +260,7 @@ a:focus-visible, button:focus-visible { outline: 3px solid rgba(242, 106, 61, 0.
   main > .section {
     display: flex;
     align-items: center;
-    min-height: calc(100vh - var(--header-height));
+    min-height: calc(100dvh - var(--header-height));
   }
 }
 @media (max-width: 1080px) {
@@ -276,7 +276,7 @@ a:focus-visible, button:focus-visible { outline: 3px solid rgba(242, 106, 61, 0.
   :root { --header-height: 4.35rem; }
   .nav-list { display: none; }
   .nav-toggle { display: inline-flex; }
-  .hero { min-height: auto; padding-top: 1.5rem; }
+  .hero { padding-top: 1.5rem; }
   .hero-inner { grid-template-columns: 1fr; gap: 3.5rem; }
   .hero-visual { order: 1; width: min(100%, 640px); height: auto; aspect-ratio: 1 / 1; min-height: 0; margin-inline: auto; }
   .hero-copy { order: 0; }
@@ -287,7 +287,6 @@ a:focus-visible, button:focus-visible { outline: 3px solid rgba(242, 106, 61, 0.
   .contact-links { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 @media (max-width: 640px) {
-  :where(.hero[id], .section[id]) { scroll-margin-top: calc(var(--header-height) + 0.8rem); }
   .container { width: min(var(--container), calc(100% - 2rem)); }
   .hero { padding-top: 1rem; padding-bottom: 3.5rem; }
   .hero-inner { gap: 2.5rem; }
