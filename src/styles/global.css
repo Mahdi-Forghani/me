@@ -142,16 +142,17 @@ a:focus-visible, button:focus-visible { outline: 3px solid rgba(19, 221, 255, 0.
 .hero-proof div { display: flex; flex-direction: column; gap: 0.1rem; }
 .hero-proof strong { color: var(--text); font-size: 1.35rem; letter-spacing: -0.05em; }
 .hero-proof span { color: var(--muted-2); font-size: 0.68rem; letter-spacing: 0.07em; text-transform: uppercase; }
-.hero-visual { position: relative; align-self: center; width: 100%; height: auto; aspect-ratio: 1 / 1; min-width: 0; min-height: 0; overflow: hidden; border: 1px solid rgba(114, 167, 255, 0.42); border-radius: 1.5rem; background: var(--surface); box-shadow: var(--shadow-lg), 0 0 34px rgba(114, 167, 255, 0.08); }
+.hero-visual-group { display: flex; flex-direction: column; align-self: center; width: 100%; min-width: 0; gap: 0.85rem; }
+.hero-visual { position: relative; width: 100%; height: auto; aspect-ratio: 1 / 1; min-width: 0; min-height: 0; overflow: hidden; border: 1px solid rgba(114, 167, 255, 0.42); border-radius: 1.5rem; background: var(--surface); box-shadow: var(--shadow-lg), 0 0 34px rgba(114, 167, 255, 0.08); }
 .hero-visual::before { display: none; }
 .hero-visual::after { content: ''; position: absolute; inset: 1rem; z-index: 2; border: 1px solid rgba(190, 216, 240, 0.18); border-radius: 1rem; background: transparent; pointer-events: none; }
 .hero-visual .profile-wrap { position: absolute; inset: 0; width: auto; height: auto; padding: 0; border-radius: 0; background: transparent; }
 .hero-visual .profile-wrap img { width: 100%; height: 100%; border-radius: 0; object-fit: cover; object-position: center; filter: saturate(0.82) contrast(1.05); }
 .hero-visual .profile-fallback { display: grid; width: 100%; height: 100%; place-items: center; border-radius: 0; color: var(--text); background: var(--accent); font-size: 7rem; font-weight: 800; }
-.hero-caption { position: absolute; right: 1.5rem; bottom: 1.5rem; left: 1.5rem; z-index: 3; display: flex; align-items: flex-end; justify-content: space-between; gap: 1rem; }
-.hero-caption h2 { margin: 0 0 0.2rem; color: var(--text); font-size: 1.65rem; letter-spacing: -0.04em; }
-.hero-caption p { margin: 0; color: rgba(244, 240, 233, 0.72); font-size: 0.8rem; }
-.hero-caption .status-badge { flex-shrink: 0; color: var(--text); border-color: rgba(244, 240, 233, 0.28); background: transparent; text-shadow: 0 1px 0 rgba(9, 10, 11, 0.7); }
+.hero-caption { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1rem 1.15rem; border: 1px solid rgba(40, 127, 255, 0.28); border-radius: var(--radius-md); background: linear-gradient(135deg, rgba(10, 27, 65, 0.78), rgba(4, 14, 43, 0.88)); box-shadow: 0 16px 36px rgba(0, 0, 0, 0.24), 0 0 28px rgba(40, 127, 255, 0.08), inset 0 1px rgba(255, 255, 255, 0.06); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); }
+.hero-caption h2 { margin: 0 0 0.2rem; color: var(--text); font-size: 1.45rem; letter-spacing: -0.04em; }
+.hero-caption p { margin: 0; color: var(--muted); font-size: 0.8rem; }
+.hero-caption .status-badge { flex-shrink: 0; color: #9cf1ff; border-color: rgba(18, 223, 255, 0.3); background: rgba(18, 223, 255, 0.08); }
 .hero-orbit { display: none; }
 .hero-scroll { position: absolute; right: 5%; bottom: 2rem; display: flex; align-items: center; gap: 0.7rem; color: var(--muted-2); font-size: 0.66rem; letter-spacing: 0.1em; text-transform: uppercase; }
 .hero-scroll span { width: 2rem; height: 1px; background: var(--accent); }
@@ -396,7 +397,8 @@ a:focus-visible, button:focus-visible { outline: 3px solid rgba(19, 221, 255, 0.
   .nav-toggle { display: inline-flex; }
   .hero { padding-top: 1.5rem; }
   .hero-inner { grid-template-columns: 1fr; gap: 3.5rem; }
-  .hero-visual { order: 1; width: min(100%, 640px); height: auto; aspect-ratio: 1 / 1; min-height: 0; margin-inline: auto; }
+  .hero-visual-group { order: 1; width: min(100%, 640px); margin-inline: auto; }
+  .hero-visual { width: 100%; height: auto; aspect-ratio: 1 / 1; min-height: 0; }
   .hero-copy { order: 0; }
   .hero-scroll { display: none; }
   .about-grid, .contact-panel { grid-template-columns: 1fr; gap: 2.5rem; }
@@ -409,12 +411,13 @@ a:focus-visible, button:focus-visible { outline: 3px solid rgba(19, 221, 255, 0.
   .container { width: min(var(--container), calc(100% - 2rem)); }
   .hero { padding-top: 1rem; padding-bottom: 3.5rem; }
   .hero-inner { gap: 2.5rem; }
-  .hero-visual { width: min(100%, 330px); height: auto; aspect-ratio: 1 / 1; min-height: 0; }
+  .hero-visual-group { width: min(100%, 330px); }
+  .hero-visual { width: 100%; height: auto; aspect-ratio: 1 / 1; min-height: 0; }
   .hero h1 { font-size: clamp(2.8rem, 14vw, 4.2rem); }
   .hero-proof { justify-content: space-between; gap: 0.8rem; }
   .hero-proof strong { font-size: 1.1rem; }
   .hero-proof span { font-size: 0.6rem; }
-  .hero-caption { right: 1rem; bottom: 1rem; left: 1rem; flex-direction: column; align-items: flex-start; }
+  .hero-caption { flex-direction: column; align-items: flex-start; }
   .hero-caption h2 { font-size: 1.35rem; }
   .hero::before { opacity: 0.62; background-size: 100% 100%; }
   .hero::after { background: linear-gradient(118deg, transparent 0 48%, rgba(147, 133, 242, 0.045) 48.1%, transparent 48.35% 100%); }
