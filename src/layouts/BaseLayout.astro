@@ -1,0 +1,32 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'Mahdi Farghani | Technical Lead & Software Engineer',
+  description = 'Technical Lead & Software Engineer focused on building reliable backend systems, improving engineering quality, and mentoring teams.'
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#0f172a" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content="https://mahdi-forghani.github.io/me/" />
+    <link rel="icon" href={`${Astro.site?.pathname ?? ''}favicon.svg`} type="image/svg+xml" />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
