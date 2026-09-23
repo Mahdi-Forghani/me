@@ -3,27 +3,27 @@ import SectionHeading from './SectionHeading.astro';
 
 const steps = [
   {
-    title: 'Make complexity visible',
-    description: 'I break ambiguous requirements into clear engineering work so teams can execute with confidence.'
+    title: 'Clarify the outcome',
+    description: 'Start with the user or business outcome, constraints, and what success needs to look like.'
   },
   {
-    title: 'Design for reliability',
-    description: 'I think through failure modes, retries, concurrency, and idempotency early in system design.'
+    title: 'Choose the useful path',
+    description: 'Make trade-offs visible, then align on the smallest path that creates meaningful progress.'
   },
   {
-    title: 'Raise the quality bar',
-    description: 'I use code review, standards, and mentoring to improve technical quality over time.'
+    title: 'Ship in slices',
+    description: 'Keep feedback close by breaking work into focused increments that can be understood and reviewed.'
   },
   {
-    title: 'Stay close to product needs',
-    description: 'I collaborate across product and customer feedback loops to deliver practical outcomes.'
+    title: 'Learn from the result',
+    description: 'Use what happened in production and collaboration to improve the next decision.'
   }
 ];
 ---
 
 <section class="section" aria-labelledby="how-i-work">
   <div class="container">
-    <SectionHeading id="how-i-work" index="03" title="How I Work" subtitle="The work is technical. The impact is collaborative." />
+    <SectionHeading id="how-i-work" index="03" title="How I Work" subtitle="A simple loop for making progress on complex work" />
     <div class="stepper">
       {steps.map((step, i) => (
         <article class="step">
