@@ -11,6 +11,5 @@ One-page personal portfolio built with Astro and configured for GitHub Pages.
 ## Deployment target
 
 - Site: `https://mahdi-forghani.github.io`
-- Base path: `/me`
 
 Configured in `astro.config.mjs`.
