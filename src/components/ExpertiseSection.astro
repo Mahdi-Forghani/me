@@ -4,31 +4,31 @@ import SectionHeading from './SectionHeading.astro';
 const capabilities = [
   {
     number: '01',
-    title: 'Backend Foundations',
-    description: 'Clear, maintainable services that give product teams a dependable base to build on.',
+    title: 'Backend Engineering',
+    description: 'Designing and building maintainable backend services for web applications.',
     skills: ['C#', '.NET', 'ASP.NET Core', 'REST APIs', 'EF Core'],
     icon: 'M4 17V7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Zm4-6h8m-8 4h5',
     className: 'expertise-card--primary'
   },
   {
     number: '02',
-    title: 'Production Reliability',
-    description: 'Practical safeguards for jobs, data, and services that need to behave predictably.',
-    skills: ['Background jobs', 'Idempotency', 'Redis', 'Observability'],
+    title: 'Reliability & Observability',
+    description: 'Improving service reliability through background jobs, idempotent operations, caching, logging, and monitoring.',
+    skills: ['Background Jobs', 'Idempotency', 'Redis', 'Logging & Monitoring'],
     icon: 'M12 3 20 6v5c0 5-3.4 8.5-8 10-4.6-1.5-8-5-8-10V6l8-3Zm0 5v4m0 4v.01'
   },
   {
     number: '03',
     title: 'System Design',
-    description: 'Turning domain constraints into boundaries, data flows, and choices teams can evolve.',
-    skills: ['Architecture', 'SQL Server', 'PostgreSQL', 'Data modeling'],
+    description: 'Designing service boundaries, data flows, and data models for maintainable systems.',
+    skills: ['Service Design', 'SQL Server', 'PostgreSQL', 'Data Modeling'],
     icon: 'M6 4h4v4H6zm8 0h4v4h-4zM6 16h4v4H6zm8 0h4v4h-4zM8 8v4h8V8M8 16v-4'
   },
   {
     number: '04',
     title: 'Technical Leadership',
-    description: 'Helping teams align on scope, sequencing, and quality without adding unnecessary process.',
-    skills: ['Planning', 'Estimation', 'Code review', 'Mentoring', 'Decisions'],
+    description: 'Leading technical planning, code reviews, mentoring, and engineering decisions.',
+    skills: ['Planning', 'Estimation', 'Code Review', 'Mentoring', 'Technical Decisions'],
     icon: 'M12 4a3 3 0 1 1 0 6 3 3 0 0 1 0-6ZM5 20a7 7 0 0 1 14 0',
     className: 'expertise-card--wide'
   }
@@ -41,18 +41,13 @@ const capabilities = [
       id="expertise"
       index="02"
       title="Expertise"
-      subtitle="The areas where I create the most leverage"
+      subtitle="Core areas of expertise"
     />
     <div class="expertise-grid">
       {capabilities.map((capability) => (
         <article class={`expertise-card ${capability.className ?? ''}`}>
           <div class="expertise-card-top">
             <span class="expertise-number mono">{capability.number}</span>
-            <span class="expertise-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-              <path d={capability.icon} />
-            </svg>
-            </span>
           </div>
           <h3>{capability.title}</h3>
           <p>{capability.description}</p>
