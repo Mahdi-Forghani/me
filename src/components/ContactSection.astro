@@ -1,44 +1,101 @@
 ---
-import SectionHeading from './SectionHeading.astro';
+import SectionHeading from "./SectionHeading.astro";
 ---
 
-<section class="section contact-spotlight" id="contact" aria-labelledby="contact-heading">
+<section
+  class="section contact-spotlight"
+  id="contact"
+  aria-labelledby="contact-heading"
+>
   <div class="container">
-    <SectionHeading id="contact-heading" index="06" title="Contact" subtitle="Get in touch" />
+    <SectionHeading
+      id="contact-heading"
+      index="06"
+      title="Contact"
+      subtitle="Get in touch"
+    />
     <div class="contact-panel">
       <div class="contact-cta">
-        <span class="pill-badge"><span class="status-dot"></span> Open to engineering opportunities</span>
+        <span class="pill-badge"
+          ><span class="status-dot"></span> Open to engineering opportunities</span
+        >
         <h2>Have an engineering challenge?</h2>
         <p class="lead">
-          I'm open to conversations about backend engineering, system design, technical leadership, and software development.
+          I'm open to conversations about backend engineering, system design,
+          technical leadership, and software development.
         </p>
       </div>
       <div class="contact-links">
-        <a class="contact-icon-link" href="mailto:forghanimahdi.dev@gmail.com" aria-label="Send email to Mahdi">
+        <a
+          class="contact-icon-link"
+          href="https://www.linkedin.com/in/mahdi-forghani"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Open LinkedIn profile"
+        >
           <span class="icon-wrap">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v12H4z" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="m4 7 8 6 8-6" fill="none" stroke="currentColor" stroke-width="1.7"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"
+              ><path
+                d="M6 9v9M6 6v.01M10 9v9m0-5c0-2 1-4 3-4s3 2 3 4v5"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"></path><rect
+                x="3"
+                y="3"
+                width="18"
+                height="18"
+                rx="3"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"></rect></svg
+            >
+          </span>
+          <span class="link-meta">
+            <span class="link-label">LinkedIn</span>
+            <span class="link-value">mahdi-forghani</span>
+          </span>
+        </a>
+        <a
+          class="contact-icon-link"
+          href="mailto:forghanimahdi.dev@gmail.com"
+          aria-label="Send email to Mahdi"
+        >
+          <span class="icon-wrap">
+            <svg viewBox="0 0 24 24" aria-hidden="true"
+              ><path
+                d="M4 6h16v12H4z"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.7"></path><path
+                d="m4 7 8 6 8-6"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.7"></path></svg
+            >
           </span>
           <span class="link-meta">
             <span class="link-label">Email</span>
             <span class="link-value">forghanimahdi.dev@gmail.com</span>
           </span>
         </a>
-        <a class="contact-icon-link" href="tel:+989910303717" aria-label="Call Mahdi">
+        <a
+          class="contact-icon-link"
+          href="tel:+989910303717"
+          aria-label="Call Mahdi"
+        >
           <span class="icon-wrap">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h4l2 5-2 2a16 16 0 0 0 4 4l2-2 5 2v4c0 1-1 2-2 2C10 20 4 14 4 6c0-1 1-2 2-2z" fill="none" stroke="currentColor" stroke-width="1.7"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"
+              ><path
+                d="M6 3h4l2 5-2 2a16 16 0 0 0 4 4l2-2 5 2v4c0 1-1 2-2 2C10 20 4 14 4 6c0-1 1-2 2-2z"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.7"></path></svg
+            >
           </span>
           <span class="link-meta">
             <span class="link-label">Phone</span>
             <span class="link-value">+98 991 030 3717</span>
-          </span>
-        </a>
-        <a class="contact-icon-link" href="https://www.linkedin.com/in/mahdi-forghani" target="_blank" rel="noopener noreferrer" aria-label="Open LinkedIn profile">
-          <span class="icon-wrap">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9v9M6 6v.01M10 9v9m0-5c0-2 1-4 3-4s3 2 3 4v5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><rect x="3" y="3" width="18" height="18" rx="3" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
-          </span>
-          <span class="link-meta">
-            <span class="link-label">LinkedIn</span>
-            <span class="link-value">mahdi-forghani</span>
           </span>
         </a>
       </div>
