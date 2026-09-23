@@ -397,9 +397,9 @@ a:focus-visible, button:focus-visible { outline: 3px solid rgba(19, 221, 255, 0.
   .nav-toggle { display: inline-flex; }
   .hero { padding-top: 1.5rem; }
   .hero-inner { grid-template-columns: 1fr; gap: 3.5rem; }
-  .hero-visual-group { order: 1; width: min(100%, 640px); margin-inline: auto; }
+  .hero-visual-group { order: 0; width: min(100%, 640px); margin-inline: auto; }
   .hero-visual { width: 100%; height: auto; aspect-ratio: 1 / 1; min-height: 0; }
-  .hero-copy { order: 0; }
+  .hero-copy { order: 1; }
   .hero-scroll { display: none; }
   .about-grid, .contact-panel { grid-template-columns: 1fr; gap: 2.5rem; }
   .expertise-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-areas: 'primary primary' 'reliability design' 'wide wide'; }
