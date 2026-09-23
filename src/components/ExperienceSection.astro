@@ -1,29 +1,49 @@
-﻿---
+---
 import SectionHeading from './SectionHeading.astro';
+
+const roles = [
+  {
+    period: '2026 - Present',
+    title: 'Technical Lead — MrBilit',
+    highlights: [
+      'Technical direction, architecture, and engineering decisions',
+      'Estimation, planning, and breaking down work',
+      'Code reviews, mentoring, and improving engineering quality'
+    ],
+    tech: ['.NET', 'Architecture', 'Leadership']
+  },
+  {
+    period: '2019 - 2026',
+    title: 'Software Engineer / Fullstack Web Developer — Kasra Company (Innovation Department)',
+    highlights: [
+      'Built and evolved production web and backend systems',
+      'Grew toward backend architecture and product-oriented engineering',
+      'Worked with real customer feedback and iterative delivery'
+    ],
+    tech: ['C#', 'ASP.NET Core', 'SQL Server']
+  }
+];
 ---
 
 <section class="section" aria-labelledby="experience">
   <div class="container">
-    <SectionHeading id="experience" index="04" title="Experience" subtitle="Professional progression" />
-    <div class="timeline">
-      <article>
-        <p class="mono">2026 - Present</p>
-        <h3>Technical Lead - MrBilit</h3>
-        <ul>
-          <li>Technical direction, architecture, and engineering decisions</li>
-          <li>Estimation, planning, and breaking down work</li>
-          <li>Code reviews, mentoring, and improving engineering quality</li>
-        </ul>
-      </article>
-      <article>
-        <p class="mono">2019 - 2026</p>
-        <h3>Software Engineer / Fullstack Web Developer - Kasra Company (Innovation Department)</h3>
-        <ul>
-          <li>Built and evolved production web and backend systems</li>
-          <li>Grew toward backend architecture and product-oriented engineering</li>
-          <li>Worked with real customer feedback and iterative delivery</li>
-        </ul>
-      </article>
+    <SectionHeading id="experience" index="05" title="Experience" subtitle="Professional progression" />
+    <div class="timeline-rail">
+      {roles.map((role) => (
+        <div class="timeline-entry">
+          <span class="timeline-dot"></span>
+          <div class="timeline-card">
+            <p class="timeline-year mono">{role.period}</p>
+            <h3>{role.title}</h3>
+            <ul>
+              {role.highlights.map((item) => <li>{item}</li>)}
+            </ul>
+            <div class="tech-tags">
+              {role.tech.map((tag) => <span class="chip">{tag}</span>)}
+            </div>
+          </div>
+        </div>
+      ))}
     </div>
   </div>
 </section>
