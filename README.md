@@ -10,6 +10,6 @@ One-page personal portfolio built with Astro and configured for GitHub Pages.
 
 ## Deployment target
 
-- Site: `https://mahdi-forghani.github.io`
+- Site: `https://mahdi-forghani.github.io/me/`
 
 Configured in `astro.config.mjs`.
