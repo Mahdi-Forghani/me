@@ -4,7 +4,9 @@ import SectionHeading from './SectionHeading.astro';
 const roles = [
   {
     period: '2026 - Present',
-    title: 'Technical Lead — MrBilit',
+    title: 'Technical Lead',
+    company: 'MrBilit',
+    current: true,
     highlights: [
       'Technical direction, system design, and engineering decisions',
       'Technical planning, estimation, and task breakdown',
@@ -14,7 +16,9 @@ const roles = [
   },
   {
     period: '2019 - 2026',
-    title: 'Software Engineer / Full-Stack Web Developer — Kasra Company',
+    title: 'Software Engineer / Full-Stack Web Developer',
+    company: 'Kasra Company',
+    current: false,
     highlights: [
       'Built and maintained production web applications and backend services.',
       'Focused on backend development, system design, and software delivery.',
@@ -28,22 +32,28 @@ const roles = [
 <section class="section" id="experience" aria-labelledby="experience-heading">
   <div class="container">
     <SectionHeading id="experience-heading" index="05" title="Experience" subtitle="Career history" />
-    <div class="timeline-rail">
+    <ol class="timeline-rail" aria-label="Professional experience">
       {roles.map((role) => (
-        <div class="timeline-entry">
-          <span class="timeline-dot"></span>
-          <div class="timeline-card">
-            <p class="timeline-year mono">{role.period}</p>
-            <h3>{role.title}</h3>
-            <ul>
+        <li class:list={['timeline-entry', { 'timeline-entry--current': role.current }]}>
+          <span class="timeline-dot" aria-hidden="true"></span>
+          <article class="timeline-card">
+            <div class="timeline-card-header">
+              <div>
+                <p class="timeline-year mono">{role.period}</p>
+                <h3>{role.title}</h3>
+                <p class="timeline-company">{role.company}</p>
+              </div>
+              {role.current && <span class="timeline-status">Current role</span>}
+            </div>
+            <ul class="timeline-highlights">
               {role.highlights.map((item) => <li>{item}</li>)}
             </ul>
-            <div class="tech-tags">
+            <div class="tech-tags" aria-label={`${role.title} technologies`}>
               {role.tech.map((tag) => <span class="chip">{tag}</span>)}
             </div>
-          </div>
-        </div>
+          </article>
+        </li>
       ))}
-    </div>
+    </ol>
   </div>
 </section>

@@ -1,4 +1,4 @@
-# Mahdi Farghani Portfolio (Astro)
+# Mahdi Forghani Portfolio (Astro)
 
 One-page personal portfolio built with Astro and configured for GitHub Pages.
 
